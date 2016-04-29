@@ -1,0 +1,40 @@
+{
+  "name": "voodoo-mobile/yii2-sms",
+  "type": "library",
+  "description": "Library for working with sms services",
+  "keywords": [
+    "upload",
+    "binary"
+  ],
+  "homepage": "https://github.com/voodoo-mobile/yii2-sms",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Voodoo Mobile Ltd",
+      "email": "public@voodoo-mobile.com",
+      "homepage": "http://voodoo-mobile.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": "~2.0",
+    "twilio/sdk": "~4.3"
+  },
+  "autoload": {
+    "psr-0": {
+      "Sms": "src"
+    },
+    "psr-4": {
+      "vm\\sms\\": "src/"
+    }
+  },
+  "extra": {
+    "asset-installer-paths": {
+      "npm-asset-library": "vendor/npm",
+      "bower-asset-library": "vendor/bower"
+    },
+    "writable": [
+    ]
+  }
+}
