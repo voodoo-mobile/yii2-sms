@@ -36,7 +36,7 @@ class SmsMessage extends Component
         return $this->provider->deliver($this);
     }
 
-    public function checkPhone()
+    public function verifyPhone()
     {
         return $this->provider->verifyPhone($this->recipient);
     }

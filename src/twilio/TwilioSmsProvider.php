@@ -1,4 +1,5 @@
 <?php
+namespace vm\sms\twilio;
 
 use vm\sms\SmsMessage;
 
@@ -8,7 +9,7 @@ class TwilioSmsProvider extends \vm\sms\SmsProvider
 
     public $authToken;
 
-    public $senderPhone;
+    public $sender;
 
     public function deliver(SmsMessage $message)
     {
@@ -22,9 +23,9 @@ class TwilioSmsProvider extends \vm\sms\SmsProvider
             ]
         );
 
-        $client = new Services_Twilio($this->sid, $this->authToken, "2010-04-01", $http);
+        $client = new \Services_Twilio($this->sid, $this->authToken, "2010-04-01", $http);
 
-        return $client->account->messages->sendMessage($this->senderPhone, $message->recipient, $message->text);
+        return $client->account->messages->sendMessage($this->sender, $message->recipient, $message->text);
     }
 
     public function verifyPhone($number)
